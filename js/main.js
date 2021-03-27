@@ -11,8 +11,9 @@ function getFactAjax() {
     xhr.open('GET', 'http://numbersapi.com/'+number);
 
     xhr.onload = function() {
-        if(this.status == 200) {
-            console.log(this.responseText)
+        if(this.status == 200 && number != '') {
+            fact.style.display = 'block';
+            factText.innerText = this.responseText;
         }
     }
     xhr.send();
