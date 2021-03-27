@@ -33,4 +33,34 @@ function getFactFetch() {
         })
         .catch(err => console.log(err));
 }
+  
 
+let factDate = document.querySelector('#factDate');
+let factDateText = document.querySelector('#factDateText');
+let monthInput = document.querySelector('#monthInput');
+monthInput.addEventListener('input' , getDateFactFetch);
+let dayInput = document.querySelector('#dayInput');
+dayInput.addEventListener('input' , getDateFactFetch);
+
+function getDateFactFetch() {
+    let month = monthInput.value;
+    let day = dayInput.value;
+
+ 
+
+    fetch('http://numbersapi.com/'+ month + '/' + day + '/' + 'date')
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            if((month == '' || month > 12) || (day == '' || day > 31)) {
+                factDate.style.display = 'block';
+                factDateText.innerHTML = "Invalid date!";
+            } else {
+                factDate.style.display = 'block';
+                factDateText.innerHTML = data;
+            }
+        })
+        .catch(err => console.log(err));
+} 
+
+ 

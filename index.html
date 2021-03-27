@@ -9,6 +9,9 @@
         #fact {
             display: none;
         }
+        #fact2 {
+            display: none;
+        }
     </style>
     <title>Number Facts</title>
 </head>
@@ -25,6 +28,34 @@
                             Number Fact
                         </h4>
                         <p id="factText" class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-4 mx-auto">
+                <div class="card bg-success text-white p-4 ">
+                    <h1>Date Facts</h1>
+                    <p>Enter a month and a day to get an awesome fact</p>
+                    <div class="dateFact">
+                        <input 
+                        type="number"
+                        onKeyPress="if(this.value.length==2) return false;"
+                        class="form-control form-control-lg mb-2"
+                        id="monthInput" 
+                        placeholder="Month number...">
+
+                        <input 
+                        type="number"
+                        onKeyPress="if(this.value.length==2) return false;"
+                        class="form-control form-control-lg"
+                        id="dayInput" 
+                        placeholder="Day number...">
+                    </div>   
+
+                    <div id="factDate" class="card-body">
+                        <h4 class="card-title">Date Fact</h4>
+                        <p id="factDateText" class="card-text"></p>
                     </div>
                 </div>
             </div>
